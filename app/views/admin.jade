@@ -1,0 +1,18 @@
+extends layouts/main
+block content
+    include admin-panel
+    .adminContent
+        h2 Admin title
+        .content
+            form(action='/', method='post', enctype='multipart/form-data')
+                label Company name
+                input(name='cname', type='text')
+            
+                label Product Name
+                input(name='pname', type='text')
+            
+                label Product Description
+                input(name='desc', type='textarea')
+            
+                label File
+                input(name='myfile', type='file')

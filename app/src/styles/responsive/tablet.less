@@ -1,0 +1,62 @@
+@media (max-width: @widthDesktop) {
+  .container {
+    width:auto;
+    margin:0 @gutterFullWith;
+  }
+  .mainHeader {
+    .logo {
+      float:none;
+      padding-right: 0px;
+    }
+    h1 {
+      text-align: right;
+      padding-top: 15px;
+    }
+  }
+  .mainFooter {
+    .container {
+      margin:0;
+      padding:0;
+      border-top: none;
+      .box-shadow(0 2px 7px 2px darken(@colorBackground,35%));
+    }
+    ul {
+      li {
+        display: block;
+        padding-right: 0px;
+        margin-right: 0px;
+        border-right: none;
+        a {
+          display: block;
+          padding:15px 0 14px;
+          //border-top: 1px solid lighten(@colorBoxes,15%);
+          //border-bottom: 1px solid darken(@colorBoxes,15%);
+          border-bottom: 1px solid darken(@colorBoxes,15%);
+          background: @colorBoxes;
+          .transition(background 250ms ease);
+          &:hover, &:focus {
+            background: darken(@colorBoxes,5%);
+          }
+        }
+        &.copyright {
+          position:static;
+          padding:15px 0 14px;
+          color:@colorBackground;
+          background: @colorFont;
+        }
+        &.contact {
+          position:static;
+          a {
+            text-decoration: none;
+            text-transform: capitalize;
+          }
+        }
+        &.last {
+          padding-right: 0px;
+          margin-right: 0px;
+          border-right: none;
+        }
+      }
+    }
+  }
+}

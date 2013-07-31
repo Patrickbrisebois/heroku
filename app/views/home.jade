@@ -1,0 +1,64 @@
+extends layouts/main
+block content
+    section.filesList
+        header
+            img.productLogo(src='/images/humira.png')
+            h2.productTitle HUM2843XXXX
+        article
+            h3 Product Monograph
+            .content
+                .col.left
+                    .definition
+                        p At vero eos at accusamus et iusto odio dignissimos ducimus qui blanditilis praesentium voluptatum deleniti atque corrupti quos dolores
+                .col.right
+                    a.downloadLink(href='#')
+                        span.centerContainer
+                            span.icon.icon-arrow-down
+                            span.label Download
+        article
+            h3 HCP Letter
+            .content
+                .col.left
+                    .definition
+                        p At vero eos at accusamus et iusto odio dignissimos ducimus qui blanditilis praesentium voluptatum deleniti atque corrupti quos dolores
+                .col.right
+                    a.downloadLink(href='#')
+                        span.centerContainer
+                            span.icon.icon-arrow-down
+                            span.label Download
+        article
+            h3 Study Parameters
+            .content
+                .col.left
+                    .definition
+                        p At vero eos at accusamus et iusto odio dignissimos ducimus qui blanditilis praesentium voluptatum deleniti atque corrupti quos dolores
+                .col.right
+                    a.downloadLink(href='#')
+                        span.centerContainer
+                            span.icon.icon-arrow-down
+                            span.label Download
+        article
+            h3 References
+            .content
+                .col.left
+                    .definition
+                        p At vero eos at accusamus et iusto odio dignissimos ducimus qui blanditilis praesentium voluptatum deleniti atque corrupti quos dolores
+                .col.right
+                    a.downloadLink(href='#')
+                        span.centerContainer
+                            span.icon.icon-arrow-down
+                            span.label Download
+
+    section.login
+        form.loginForm
+            h3 Login
+            .content
+                input.username.mousetrap(type="text", name="username", placeholder="Username")
+                input.password.mousetrap(type="password", name="password", placeholder="Password")
+                p.errors Username or password is invalid
+                .buttons
+                    .button.cancel
+                        input.mousetrap(type="reset", value="Cancel")
+                    .button.submit
+                        input.mousetrap(type="submit", value="Submit")
+                    .clearfix

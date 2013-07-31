@@ -1,0 +1,16 @@
+script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+script
+  window.jQuery || document.write('<script src="/scripts/libs/jquery-1.9.1.min.js">\\x3C/script>')
+//if IE
+  script(src='/scripts/libs/respond.min.js')
+//if lt IE 8
+  script(src='/scripts/lte-ie8.js')
+//if lt IE 7
+  script(src='/scripts/lte-ie7.js')
+script(src='/scripts/libs/placeholder_polyfill.jquery.min.combo.js')
+script(src='/scripts/libs/enquire.min.js')
+script(src='/scripts/libs/mousetrap.min.js')
+script(src='/scripts/main.js')
+- if(admin)
+  script(src='/scripts/libs/redactor.min.js')
+  script(src='/scripts/admin.js')

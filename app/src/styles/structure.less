@@ -1,0 +1,309 @@
+html,body {
+  margin:0;
+  padding:0;
+  font-family: @fontMain;
+  color: @colorFont;
+  background: @colorBackground;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  text-decoration: underline;
+  &:focus, &:hover {
+    text-decoration: none;
+  }
+}
+input {
+  font-family: @fontMain;
+  line-height: 1.5;
+  padding: 5px 10px;
+  color: @colorFont;
+  display: block;
+  width: 100%;
+  background: lighten(@colorBackground,15%);;
+  border: 3px solid darken(@colorBoxes,5%);
+  .box-sizing(border-box);
+  margin-bottom: 15px;
+  .border-radius(@borderRadius);
+  .transition(all 0.3s ease-out);
+  outline:none;
+  &:hover, &:focus {
+    border: 3px solid darken(@colorBoxes,15%);
+  }
+}
+.container {
+  width:@widthDesktop;
+  margin-right: auto;
+  margin-left: auto;
+  *zoom: 1;
+  &:before,&:after {
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.mainHeader {
+  padding:20px 0;
+  margin-bottom:30px;
+  #gradient > .vertical(lighten(@colorTheme,10%), @colorTheme);
+  .box-shadow(0px 2px 3px 1px darken(@colorBackground,35%));
+  color:@colorTitle;
+  .logo {
+    display: block;
+    float:left;
+    padding-right: 30px;
+    img {
+      height: @topMenuContentHeight;
+    }
+  }
+  h1 {
+    margin:0;
+    font-size: 18px;
+    padding-top:9px;
+  }
+}
+
+.mainFooter {
+  font-size: 14px;
+  color:@colorFont;
+  margin-top:30px;
+  .container {
+    border-top:2px solid @colorBoxes;
+    padding:15px 0;
+  }
+  a {
+    color:@colorFont;
+    text-decoration: none;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    position: relative;
+    li {
+      display: inline;
+      padding-right: 5px;
+      margin-right: 5px;
+      border-right: 1px solid @colorFont;
+      &.copyright {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-right: 0px;
+        margin-right: 0px;
+        border-right: none;
+      }
+      &.contact {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-right: 0px;
+        margin-right: 0px;
+        border-right: none;
+        a {
+          text-decoration: underline;
+          &:focus, &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      &.last {
+        padding-right: 0px;
+        margin-right: 0px;
+        border-right: none;
+      }
+    }
+  }
+}
+
+section.filesList {
+  header {
+    padding-bottom: 15px;
+    border-bottom: 2px solid @colorBoxes;
+    margin-bottom: 30px;
+    .productLogo {
+      height: 50px;
+      float:left;
+    }
+    .productTitle {
+      margin: 0;
+      text-align: right;
+      padding-top: 32px;
+      font-size: 18px;
+      color: @colorTheme;
+    }
+
+  }
+  article {
+    .border-radius(@borderRadius);
+    overflow: hidden;
+    margin-bottom: 20px;
+    .box-shadow(2px 2px 7px -2px darken(@colorBackground,35%));
+    h3 {
+      color:@colorTitle;
+      #gradient > .vertical(lighten(@colorTheme,10%), @colorTheme);
+      font-size: 16px;
+      padding:10px 15px;
+      margin:0;
+    }
+    .content {
+      padding:10px 15px;
+      background: @colorBoxes;
+      font-size: 14px;
+      position: relative;
+      min-height: 80px;
+      .col {
+        &.left {
+          margin-right: 90px;
+          .definition {
+
+          }
+        }
+        &.right {
+          width: 90px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          .downloadLink {
+            text-decoration: none;
+            color: @colorFont;
+            text-align: center;
+            display: table;
+            width: 100%;
+            height: 100%;
+            .centerContainer {
+              display: table-cell;
+              vertical-align: middle;
+            }
+            .icon {
+              font-size: 30px;
+              display: block;
+              margin:0 auto;
+              width: 35px;
+              height: 35px;
+              border:3px solid;
+              .border-radius(50%);
+              position: relative;
+              z-index: 1;
+              .transition(color 0.3s);
+              &:before {
+                line-height: 35px;
+              }
+              &:after {
+                pointer-events: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                .border-radius(50%);
+                content: '';
+                top: -4px;
+                left: -4px;
+                padding: 4px;
+                z-index: -1;
+                background: @colorFont;
+                .transition(~"0.2s, opacity 0.3s");
+                .transform(scale(1.3));
+                opacity: 0;
+              }
+            }
+            .label {
+              text-decoration: underline;
+              display: block;
+              padding-top:5px;
+            }
+            &:hover, &:focus {
+              .icon {
+                color:@colorBoxes;
+                &:after {
+                  .transform(scale(1));
+                  opacity: 1;
+                }
+              }
+              .label {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: fadeout(@colorBackground,30%);
+  z-index: 1000;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  .transition(~"opacity 0.3s ease-out, 0.3s height 0s");
+  &.active {
+    height: 100%;
+    opacity: 1;
+  }
+  .loginForm {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 360px;
+    height: 250px;
+    margin-left: 360px / -2;
+    margin-top: 250px / -2;
+    background: @colorBackground;
+    .border-radius(@borderRadius);
+    .box-shadow(2px 2px 7px -2px darken(@colorBackground,35%));
+    overflow: hidden;
+    h3 {
+      color:@colorTitle;
+      #gradient > .vertical(lighten(@colorTheme,10%), @colorTheme);
+      font-size: 16px;
+      font-weight: bold;
+      padding:10px 15px;
+      margin:0;
+    }
+    .content {
+      padding:15px;
+      .errors {
+        margin: 0;
+        text-align: center;
+        color: #F00;
+        height: 1em;
+      }
+      .buttons {
+        padding-top:15px;
+        .button {
+          width:50%;
+          float:left;
+          .box-sizing(border-box);
+          &.cancel {
+            padding-right: 15px;
+            input {
+              background: darken(@colorBackground,7%);
+            }
+          }
+          &.submit {
+            padding-left: 15px;
+            input {
+              #gradient > .vertical(lighten(@colorTheme,10%), @colorTheme);
+              color:@colorTitle;
+            }
+          }
+          input {
+            margin:0;
+          }
+        }
+      }
+    }
+  }
+}

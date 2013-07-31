@@ -1,0 +1,45 @@
+// For clearing floats like a boss h5bp.com/q
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// For desktops
+.visible-phone     { &, span& {display: none !important; }}
+.visible-tablet    { &, span& {display: none !important; }}
+.hidden-phone      { }
+.hidden-tablet     { }
+.hidden-desktop    { &, span& {display: none !important; }}
+.visible-desktop   { display: inherit !important; span& { display: inline !important;}}
+
+// Tablets & small desktops only
+@media (max-width: @widthDesktop) {
+  // Hide everything else
+  .hidden-desktop    { display: inherit !important; span& { display: inline !important;}}
+  .visible-desktop   { &, span& {display: none !important; }}
+  // Show
+  .visible-tablet    { display: inherit !important; span& { display: inline !important;}}
+  // Hide
+  .hidden-tablet     { &, span& {display: none !important; }}
+}
+
+// Phones only
+@media (max-width: @widthTablet) {
+  // Hide everything else
+  .hidden-desktop    { display: inherit !important; span& { display: inline !important;}}
+  .visible-desktop   { &, span& {display: none !important; }}
+  // Show
+  .visible-phone     { display: inherit !important; span& { display: inline !important;}} // Use inherit to restore previous behavior
+  // Hide
+  .hidden-phone      { &, span& {display: none !important; }}
+}
